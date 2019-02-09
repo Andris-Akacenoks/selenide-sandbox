@@ -1,21 +1,22 @@
 package step_definitions;
 
+import cucumber.api.java.en.Given;
 import cucumber.api.java.en.When;
 import general.User;
-import pages.account.AccountPageObject;
+import pages.header.NavigationPageObject;
 import pages.login.LoginPageObject;
 
 public class LoginSteps {
 
     private LoginPageObject loginPage = new LoginPageObject();
-    User user = new User("top.garlic@g2mail.com", "Parole123");
+    private NavigationPageObject mainPage = new NavigationPageObject();
+    User user = new User();
 
 
-    @When("^I login this account$")
-    public void iLoginThisAccount() throws Throwable {
-        loginPage.enterEmail(user.getEmailAddress());
-        loginPage.enterPassword(user.getPassword());
-        loginPage.toggleRememberMeTickBox(true);
-        loginPage.selectLoginButton();
+    @Given("^I have chosen to sign up$")
+    public void chooseToSignUp() throws Throwable {
+        mainPage.selectLoginButton();
+        loginPage.enterEmailSignup(user.getEmailAddress());
+        loginPage.selectSignupButton();
     }
 }

@@ -18,7 +18,7 @@ public class Hooks {
 
     @Before
     public void openHomePage(){
-        open("https://www.phptravels.net/");
+        open("http://automationpractice.com/");
     }
 
     @After

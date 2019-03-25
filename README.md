@@ -1,1 +1,1 @@
-## Trying out many features of Selenide
+## Trying out features of Selenide
